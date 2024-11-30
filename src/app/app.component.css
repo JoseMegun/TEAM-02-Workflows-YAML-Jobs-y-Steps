@@ -1,0 +1,226 @@
+/* Estilos globales para el body */
+body {
+    background-color: #f9fafb;
+    color: #ffc038; /* Color amarillo para el modo claro */
+}
+
+/* Estilos para el modo oscuro */
+body.dark {
+    background-color: #121212; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco en el modo oscuro */
+}
+
+/* Cambiar color de texto específico en modo oscuro */
+body.dark .topnav a, 
+body.dark .sidebar a, 
+body.dark .main-content {
+    color: #ffffff; /* Asegurarse de que el texto sea blanco en los enlaces y contenido */
+}
+
+/* Cambiar color de los íconos en modo oscuro */
+body.dark .bi, 
+body.dark .boxicons {
+    color: #ffffff; /* Íconos blancos en el modo oscuro */
+}
+
+/* Cambiar color de los botones en modo oscuro */
+body.dark button {
+    background-color: #333333; /* Fondo oscuro para el botón */
+    color: #ffffff; /* Texto blanco para el botón */
+}
+
+/* Evitar color amarillo persistente */
+body.dark .highlight {
+    color: #ffcc00; /* Cambiar el color amarillo en modo oscuro */
+}
+
+/* Ajustes para el topnav en modo oscuro */
+body.dark .topnav {
+    background-color: #333; /* Fondo oscuro para topnav */
+    color: #f9fafb; /* Texto claro para topnav */
+}
+
+/* Ajustes para el sidebar en modo oscuro */
+body.dark .sidebar {
+    background-color: #333; /* Fondo oscuro en sidebar */
+    color: #f9fafb; /* Texto claro en sidebar */
+}
+
+/* Ajustes adicionales para otros elementos */
+body.dark .menu, 
+body.dark .dropdown-container {
+    background-color: #333; /* Fondo oscuro para menús */
+}
+
+/* Otros elementos donde el color amarillo podría aplicarse */
+body.dark .section p, 
+body.dark .topnav a:hover, 
+body.dark .sidebar a:hover {
+    color: #ffffff; /* Asegurarse de que no haya amarillo en el modo oscuro */
+}
+
+.topnav {
+    position: sticky;
+    width: 100%; /* Cambié de 200% a 100% para evitar desbordamiento horizontal */
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: #ff2323;
+    border-bottom: 1px solid rgb(128, 128, 128);
+    z-index: 100; /* Asegura que la barra de navegación esté encima de otros elementos */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.topnav.dark {
+    background-color: #333; /* Fondo oscuro para modo oscuro */
+    color: #f9fafb; /* Texto claro para modo oscuro */
+}
+
+.topnav a {
+    float: left;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 14px 16px;
+    color: #fff; /* Texto blanco para los enlaces */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.topnav a:hover {
+    color: #1d4ed8; /* Color al pasar el ratón sobre los enlaces */
+}
+
+.topnav .menu {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff; /* Icono blanco */
+    display: none;
+}
+
+.topnav.dark .menu {
+    color: #f9fafb; /* Icono blanco en modo oscuro */
+}
+
+.sidebar {
+    position: fixed;
+    top: 69px;
+    left: 0;
+    overflow: auto;
+    background-color: #10f100;
+    height: 100%;
+    border-right: 1px solid rgb(128, 128, 128);
+    padding: 30px 5px;
+    margin: 0px;
+    width: 250px;
+    transition: all 0.3s ease;
+}
+
+.sidebar.dark {
+    background-color: #333; /* Fondo oscuro en la sidebar */
+    color: #f9fafb; /* Texto claro en modo oscuro */
+}
+
+.sidebar a {
+    text-decoration: none;
+    padding: 10px 10px;
+    color: #000;
+    text-align: left;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar.dark a {
+    color: #f9fafb; /* Texto claro en los enlaces */
+}
+
+.sidebar i {
+    padding-right: 10px;
+}
+
+.sidebar .icon {
+    float: right;
+}
+
+.sidebar a:hover {
+    background-color: #1d4ed8;
+    color: #fff;
+}
+
+.dropdown-container {
+    padding-left: 10px;
+    overflow: hidden;
+    max-height: 0px;
+    transition: all 0.7s ease;
+}
+
+.dropdown-container.show {
+    max-height: 1000px;
+    transition: all 0.7s ease;
+}
+
+ul {
+    padding: 0px;
+}
+
+ul > li > a.active {
+    color: #000;
+}
+
+.main-content {
+    margin-left: 230px;
+    margin-top: 20px;
+    padding: 10px 18px;
+    transition: margin-left 0.5s;
+}
+
+.main-content.dark {
+    background-color: #121212; /* Fondo oscuro para el contenido principal */
+    color: #f9fafb; /* Texto claro en modo oscuro */
+}
+
+@media screen and (max-width: 500px) {
+    .menu {
+        display: block;
+    }
+    .sidebar {
+        display: none;
+        width: 160px;
+    }
+    .sidebar a {
+        padding: 10px 0px;
+    }
+    .main-content {
+        margin-left: 0px;
+    }
+}
+
+button {
+    background-color: #1d4ed8;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    position: absolute;
+  right: 0.6rem;
+}
+
+button:hover {
+    background-color: #1e40af;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.section p {
+    line-height: 1.6;
+    font-size: 1em;
+    color: #000000;
+}
