@@ -1,16 +1,16 @@
-name: Build
-on:
+name: Build         # Nombre del Workflow
+on:                 # Evento que dispara el Workflow
   push:
     branches:
-      - main
+      - main                    # Solo se activa en las ramas 'main' y 'Ejemplo01/JoseMegun'
       - Ejemplo01/JoseMegun
   pull_request:
     types: [opened, synchronize, reopened]
-jobs:
+jobs:                                       # Inicio de los Jobs
   sonarcloud:
     name: SonarQube Cloud
     runs-on: ubuntu-latest
-    steps:
+    steps:                    # Lista de pasos
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
